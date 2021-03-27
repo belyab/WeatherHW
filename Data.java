@@ -76,19 +76,19 @@ public class Data {
 
     //взято из просторов гугла
     public Day getDayMaxTemperature(){
-        Day day = dayArrayList.stream().max(Comparator.comparingDouble(o->o.getMaxTemperature())).get();
+        Day day = dayArrayList.stream().max(Comparator.comparingDouble(Day::getMaxTemperature)).get();
         day.getDate().set(Calendar.HOUR_OF_DAY,day.getTimeMaxTemperature());
         return day;
     }
 
     public Day getDayLowestHumidity(){
-        Day day = dayArrayList.stream().min(Comparator.comparingDouble(o->o.getLowestHumidity())).get();
+        Day day = dayArrayList.stream().min(Comparator.comparingDouble(Day::getLowestHumidity)).get();
         day.getDate().set(Calendar.HOUR_OF_DAY,day.getLowestHumidityTime());
         return day;
     }
 
     public  Day getDayMaxWindSpeed(){
-        Day day = dayArrayList.stream().max(Comparator.comparingDouble(o->o.getMaxWindSpeed())).get();
+        Day day = dayArrayList.stream().max(Comparator.comparingDouble(Day::getMaxWindSpeed)).get();
         day.getDate().set(Calendar.HOUR_OF_DAY, (int) day.getMaxWindSpeed());
         return day;
     }

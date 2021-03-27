@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 
 public class Day {
 
-    private Calendar date;
+    private  Calendar date;
     private ArrayList<Double> temperatureByDay;
     private double maxTemperature;
     private int maxTemperatureTime;
